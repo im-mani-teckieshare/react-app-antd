@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 
-import { Layout, Drawer, Button, Icon, Menu } from "antd";
+import { Layout, Drawer, Button, Icon, Menu, Row, Col, Table,Timeline } from "antd";
 const { Header, Content, Footer, Sider } = Layout;
 
 class App extends React.Component {
@@ -39,6 +39,39 @@ class App extends React.Component {
       zIndex: "1001",
       top: "50%"
     };
+    const dataSource = [
+      {
+        key: "1",
+        name: "Mike",
+        age: 32,
+        address: "10 Downing Street"
+      },
+      {
+        key: "2",
+        name: "John",
+        age: 42,
+        address: "10 Downing Street"
+      }
+    ];
+
+    const columns = [
+      {
+        title: "Name",
+        dataIndex: "name",
+        key: "name"
+      },
+      {
+        title: "Age",
+        dataIndex: "age",
+        key: "age"
+      },
+      {
+        title: "Address",
+        dataIndex: "address",
+        key: "address"
+      }
+    ];
+
     return (
       <Layout
         style={{
@@ -66,7 +99,20 @@ class App extends React.Component {
         </Header>
 
         <Layout>
-          <Sider collapsible={true} defaultCollapsed="true" collapsedWidth={0} reverseArrow={false} theme="light">left sidebar</Sider>
+          <Sider
+            collapsible={true}
+            defaultCollapsed="true"
+            collapsedWidth={0}
+            reverseArrow={false}
+            theme="light"
+          >
+           <Menu>
+            <Menu.Item key="1">option1</Menu.Item>
+            <Menu.Item key="2">option2</Menu.Item>
+            <Menu.Item key="3">option3</Menu.Item>
+            <Menu.Item key="4">option4</Menu.Item>
+           </Menu>
+          </Sider>
           <Button style={buttonStyle} type="primary" onClick={this.showDrawer}>
             <Icon type={this.state.icon} />
           </Button>
@@ -79,15 +125,54 @@ class App extends React.Component {
             visible={this.state.visible}
             getContainer={false}
             style={{ position: "absolute" }}
+            mask={false}
+            maskClosable={false}
           >
             <p>Some contents...</p>
           </Drawer>
-          <Content style={{ margin: "0", background: "red" }} >Some Content </Content>
+          <Content style={{ margin: "0", background: "#fff" }}>
+            <div className="gutter-example">
+              <Row gutter={16}>
+                <Col className="gutter-row" span={12}>
+                  <Table dataSource={dataSource} columns={columns} />;
+                </Col>
+                <Col className="gutter-row" span={12}>
+                  <Timeline>
+                    <Timeline.Item color="green">
+                      Create a services site 2015-09-01
+                    </Timeline.Item>
+                    <Timeline.Item color="green">
+                      Create a services site 2015-09-01
+                    </Timeline.Item>
+                    <Timeline.Item color="red">
+                      <p>Solve initial network problems 1</p>
+                      <p>Solve initial network problems 2</p>
+                      <p>Solve initial network problems 3 2015-09-01</p>
+                    </Timeline.Item>
+                    <Timeline.Item>
+                      <p>Technical testing 1</p>
+                      <p>Technical testing 2</p>
+                      <p>Technical testing 3 2015-09-01</p>
+                    </Timeline.Item>
+                    <Timeline.Item color="gray">
+                      <p>Technical testing 1</p>
+                      <p>Technical testing 2</p>
+                      <p>Technical testing 3 2015-09-01</p>
+                    </Timeline.Item>
+                    <Timeline.Item color="gray">
+                      <p>Technical testing 1</p>
+                      <p>Technical testing 2</p>
+                      <p>Technical testing 3 2015-09-01</p>
+                    </Timeline.Item>
+                  </Timeline>
+                </Col>
+              </Row>
+            </div>
+          </Content>
         </Layout>
         <Footer style={{ textAlign: "center" }}>
           Drawer with Handler Created By Teckieshare
         </Footer>
-
       </Layout>
     );
   }
