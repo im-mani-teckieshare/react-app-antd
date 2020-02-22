@@ -72,6 +72,12 @@ class App extends React.Component {
       }
     ];
 
+    const zeroTriggerStyle = {
+      background: "transparent",
+    border: "1px groove rgba(255, 247, 247, 0.65)",
+    top:"0"
+    }
+
     return (
       <Layout
         style={{
@@ -85,12 +91,11 @@ class App extends React.Component {
         }}
       >
         <Header theme="light">
-          <div className="TeckiShare" />
           <Menu
             theme="dark"
             mode="horizontal"
             defaultSelectedKeys={["2"]}
-            style={{ lineHeight: "64px" }}
+            style={{ lineHeight: "64px",display:"flex" }}
           >
             <Menu.Item key="1">nav 1</Menu.Item>
             <Menu.Item key="2">nav 2</Menu.Item>
@@ -105,6 +110,7 @@ class App extends React.Component {
             collapsedWidth={0}
             reverseArrow={false}
             theme="light"
+            zeroWidthTriggerStyle={zeroTriggerStyle}
           >
            <Menu>
             <Menu.Item key="1">option1</Menu.Item>
@@ -117,7 +123,7 @@ class App extends React.Component {
             <Icon type={this.state.icon} />
           </Button>
           <Drawer
-            title="Basic Drawer"
+            title="Drawer With Handle"
             placement="right"
             closable={false}
             maskStyle={{ background: "transparent" }}
