@@ -10,7 +10,7 @@ class App extends React.Component {
     this.setState({
       visible: !this.state.visible,
       right: !this.state.visible ?'257px':'0px',
-      icon:'menu-fold'
+      icon:!this.state.visible ?'right':'left',
     });
   };
 
@@ -18,7 +18,7 @@ class App extends React.Component {
     this.setState({
       visible: false,
       right:'0px',
-      icon:'menu-unfold'
+      icon:'left'
     });
   };
 
