@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
+import ListContainer from "./listContainer";
 
 
 import { Layout, Drawer, Button, Icon, Menu, Row, Col, Table,Timeline } from "antd";
@@ -135,7 +136,7 @@ class App extends React.Component {
             mask={false}
             maskClosable={false}
           >
-            <p>Some contents...</p>
+            <ListContainer/>
           </Drawer>
           <Content style={{ margin: "0", background: "#fff" }}>
             <div className="gutter-example">
