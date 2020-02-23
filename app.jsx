@@ -125,7 +125,7 @@ class App extends React.Component {
             <Icon type={this.state.icon} />
           </Button>
           <Drawer
-            title="Drawer With Handle"
+            title="Drawer With Handler"
             placement="right"
             closable={false}
             maskStyle={{ background: "transparent" }}

@@ -37,10 +37,10 @@ return (<InfiniteScroll
       gutter: 16,
       xs: 1,
       sm: 2,
-      md: 4,
-      lg: 24,
-      xl: 6,
-      xxl: 3,
+      md: 1,
+      lg: 1,
+      xl: 1,
+      xxl: 1,
     }}
     dataSource={data}
     renderItem={item => (
