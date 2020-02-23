@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import InfiniteScroll from 'react-infinite-scroller'; 
-import {List ,Card} from "antd";
+import {List ,Card,Spin} from "antd";
 
 class ListContainer extends Component{
 
@@ -29,8 +29,9 @@ render(){
 
 return (<InfiniteScroll
     pageStart={0}
-    hasMore={false}
-    loader={<div className="loader" key={0}>Loading ...</div>}
+    loadMore={loadFunc}
+    hasMore={true || false}
+    loader={ <Spin size="large" />}
 >
   <List
     grid={{
