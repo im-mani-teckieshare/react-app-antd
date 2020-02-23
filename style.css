@@ -1,3 +1,17 @@
 h1, p {
   font-family: Lato;
 }
+
+.demo-infinite-container {
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  overflow: auto;
+  padding: 0;
+  height: calc(100vh - 80px);
+}
+.demo-loading-container {
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  text-align: center;
+}

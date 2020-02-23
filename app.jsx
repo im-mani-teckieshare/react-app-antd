@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
+import InfiniteListExample from "./test";
 import ListContainer from "./listContainer";
 
 
@@ -125,7 +126,7 @@ class App extends React.Component {
             <Icon type={this.state.icon} />
           </Button>
           <Drawer
-            title="Drawer With Handler"
+            title="Drawer-Handler-Infinite-Scroller"
             placement="right"
             closable={false}
             maskStyle={{ background: "transparent" }}
@@ -135,6 +136,7 @@ class App extends React.Component {
             style={{ position: "absolute" }}
             mask={false}
             maskClosable={false}
+            bodyStyle={{padding:0}}
           >
             <ListContainer/>
           </Drawer>

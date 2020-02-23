@@ -51,27 +51,29 @@ class ListContainer extends Component {
 
   loadFunc = () => {
     console.log('comes.....')
-    alert()
     this.setState({
       loading: true
     });
 
     let newList = this.state.list.concat(...data);
-    console.log(newList);
-
+// setTimeout(
       this.setState({
         list: newList,
         loading: false
       })
+      // ,2000)
   };
   render() {
     return (
+       <div className="demo-infinite-container">
       <InfiniteScroll
-        pageStart={0}
-        initialLoad={false}
-        hasMore={false || !this.state.loading}
+        pageStart={1}
+        initialLoad={ false }
+        hasMore={this.state.hasMore && !this.state.loading}
         loadMore={this.loadFunc}
         loader={<Spin size="large" />}
+        useWindow={false}
+        style={{padding:48}}
        
       >
         <List
@@ -92,6 +94,7 @@ class ListContainer extends Component {
           )}
         />
       </InfiniteScroll>
+      </div>
     );
   }
 }
