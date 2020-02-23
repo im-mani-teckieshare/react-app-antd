@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
+import stamp from './paid_stamp.png';
+
+console.log(stamp);
 
 import { Layout, Drawer, Button, Icon, Menu, Row, Col, Table,Timeline } from "antd";
 const { Header, Content, Footer, Sider } = Layout;
@@ -137,6 +140,7 @@ class App extends React.Component {
             <p>Some contents...</p>
           </Drawer>
           <Content style={{ margin: "0", background: "#fff" }}>
+          <img src={stamp}/>
             <div className="gutter-example">
               <Row gutter={16}>
                 <Col className="gutter-row" span={12}>
